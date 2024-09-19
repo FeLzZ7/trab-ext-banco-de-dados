@@ -1,0 +1,8 @@
+CREATE TABLE materiais (
+    id_material INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    quantidade INT NOT NULL,
+    unidade VARCHAR(50),
+    preco DECIMAL(10, 2),
+    data_aquisicao DATE
