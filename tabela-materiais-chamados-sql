@@ -1,0 +1,7 @@
+CREATE TABLE materiais_chamados (
+    id_material_chamado INT AUTO_INCREMENT PRIMARY KEY,
+    id_chamado INT,
+    id_material INT,
+    quantidade_usada INT NOT NULL,
+    FOREIGN KEY (id_chamado) REFERENCES chamados(id_chamado) ON DELETE CASCADE,
+    FOREIGN KEY (id_material) REFERENCES materiais(id_material) ON DELETE CASCADE
