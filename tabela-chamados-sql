@@ -1,0 +1,8 @@
+CREATE TABLE chamados (
+    id_chamado INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    data_chamado DATE,
+    horario_chamado TIME,
+    descricao_chamado TEXT,
+    status VARCHAR(50) DEFAULT 'Pendente',
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE
