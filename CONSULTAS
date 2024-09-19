@@ -1,0 +1,15 @@
+Consultar Estoque de Materiais: Para verificar a quantidade de um material específico no estoque:
+SELECT nome, quantidade FROM materiais WHERE nome = 'Nome do Material';
+
+Consultar Chamados Agendados: Para listar todos os chamados agendados:
+SELECT c.nome_cliente, ch.data_chamado, ch.horario_chamado, ch.descricao_chamado, ch.status 
+FROM chamados ch
+JOIN clientes c ON ch.id_cliente = c.id_cliente
+WHERE ch.status = 'Pendente';
+
+Atualizar Estoque Após um Chamado: Para atualizar o estoque depois de um chamado, pode-SE utilizar um UPDATE com base nos materiais usados no chamado:
+sql
+Copiar código
+UPDATE materiais 
+SET quantidade = quantidade - quantidade_usada
+WHERE id_material = 1; -- Exemplo de ID do materia
